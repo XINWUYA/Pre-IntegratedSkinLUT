@@ -4,7 +4,7 @@ from PIL import Image
 
 image_width = 128
 image_height = 128
-output_path = "ShadowScatteringLUT1.png"
+output_path = "ShadowScatteringLUT.png"
 
 diffusion_radius = 2.7 # in world units (= 2.7mm for human skin)
 shadow_width_min = 8 # in world units (mm)
@@ -60,7 +60,7 @@ def GenShadowScatteringImgData():
         rcp_width = rcp_shadow_width_min + float(row + 0.5) * shadow_step_scale
         for col in range(image_width):
             shadow = float(col + 0.5) / image_width  # (0,1)
-            input_pos = (math.sqrt(shadow) - math.sqrt(1.0 + shadow_offset - shadow)) * 0.5 + 0.5 #
+            input_pos = (math.sqrt(shadow) - math.sqrt(1.0 + shadow_offset - shadow)) * 0.5 + 0.5
             diffuse = ComputeShadowScattering(input_pos, rcp_width)
 
             # diffuse = pow(diffuse, 1.0 / 2.2)  # Gamma Correction

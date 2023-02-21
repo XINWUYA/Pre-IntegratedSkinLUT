@@ -11,3 +11,7 @@
 - ShadowScatteringLUT:
 
 ![](Results/ShadowScatteringLUT.png)
+
+- 基于NVIDIA-FaceWorks方法生成CurvatureLUT:
+
+![](Results/CurvatureLUT.png)
